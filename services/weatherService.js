@@ -14,6 +14,7 @@ export async function fetchWeatherData() {
     const data = response.data.days[0];
 
     return {
+      weather: data.conditions,
       high: data.tempmax,
       low: data.tempmin,
       uvIndex: data.uvindex,
