@@ -12,9 +12,12 @@ export async function fetchWeatherData() {
   try {
     const response = await axios.get(url);
     const data = response.data.days[0];
+    console.log(data);
 
     return {
-      weather: data.conditions,
+      weather: data.description,
+      icon: data.icon,
+      risk: data.severerisk,
       high: data.tempmax,
       low: data.tempmin,
       uvIndex: data.uvindex,
