@@ -28,13 +28,17 @@ sunset:
 moonPhase: 
 wake: 
 sleep: 
+dream: 
 morning: 
 moodAM: 
+noteAM: 
+meditationTime: 
+meditationNote: 
+weight: 
 workout: 
 tasks: 
 moodPM: 
 night: 
-meditationNote: 
 reading: 
 readingTime: 
 breakfast: 
@@ -42,7 +46,6 @@ lunch:
 dinner: 
 snack: 
 water: 
-weight: 
 BMs: 
 aliases:
   - ${format(date, 'yyyy-MM-dd')}
