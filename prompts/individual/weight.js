@@ -4,7 +4,7 @@ import chalk from 'chalk';
 export const weight = {
   name: 'weight',
   prompt: async () => {
-    const sleep = await number({
+    const weight = await number({
       message: chalk.yellow('Please Enter Your Current Weight in lbs:'),
       validate: (input) => {
         if (input >= 1 && input <= 350) {

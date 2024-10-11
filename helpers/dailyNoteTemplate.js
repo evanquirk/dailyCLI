@@ -12,11 +12,13 @@ tags:
 cssclasses:
   - daily
   - ${format(date, 'EEEE').toLowerCase()}
-template: "[[04 Archives/04.04 Templates/Daily|Daily]]"
+template: "[[08 System/08.02 Templates/Daily]]"
 weather: 
+icon:
 high: 
 low: 
 uvIndex: 
+risk: 
 avPm10: 
 avPm25: 
 avCO: 
@@ -28,17 +30,19 @@ sunset:
 moonPhase: 
 wake: 
 sleep: 
-dream: 
-morning: 
+dreams: 
 moodAM: 
 noteAM: 
-meditationTime: 
-meditationNote: 
 weight: 
 workout: 
 tasks: 
+meditationTime: 
+meditationNote: 
+completed:
+gratitude:
+moment:
 moodPM: 
-night: 
+notePM:
 reading: 
 readingTime: 
 breakfast: 
@@ -50,11 +54,7 @@ BMs:
 aliases:
   - ${format(date, 'yyyy-MM-dd')}
 ---
-## ${format(date, 'EEEE MMMM dd yyyy')}
-> [!important]- ❮❮ [[05 Periodic Notes/05.02 Daily/${format(yesterday, 'yyyy/MM/yyyy-MM-dd')}|${format(yesterday, 'yyyy-MM-dd EEE')}]] | [[06 Quick Note|✍️]] | [[05 Periodic Notes/05.02 Daily/${format(tomorrow, 'yyyy/MM/yyyy-MM-dd')}|${format(tomorrow, 'yyyy-MM-dd EEE')}]] ❯❯
-> [[05 Periodic Notes/05.06 Yearly/${format(date, 'yyyy')}|${format(date, 'yyyy')}]] / [[05 Periodic Notes/05.05 Quarterly/${format(date, 'yyyy-[Q]Q')}|${format(date, '[Q]Q')}]] / [[05 Periodic Notes/05.04 Monthly/${format(date, 'yyyy/yyyy-MM')}|${format(date, 'MMMM')}]] / [[05 Periodic Notes/05.03 Weekly/${format(date, "RRRR-'W'II")}|Week ${format(date, 'w')}]] / ${format(date, 'dd')}
-
-`;
+## ${format(date, 'EEEE MMMM dd yyyy')}`;
 
   return template;
 }
