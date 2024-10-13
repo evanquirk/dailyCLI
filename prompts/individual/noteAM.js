@@ -5,7 +5,7 @@ export const noteAM = {
   name: 'noteAM',
   prompt: async () => {
     const wantToLeaveNote = await confirm({
-      message: chalk.yellow('Would you like to leave a note for today?')
+      message: chalk.yellow('Any notes from this morning??')
     });
 
     if (wantToLeaveNote) {
