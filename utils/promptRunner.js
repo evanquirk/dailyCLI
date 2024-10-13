@@ -6,20 +6,18 @@ export async function runPrompts(selection) {
   async function runPromptsAndServices(promptsToRun, servicesToRun = []) {
     for (const prompt of promptsToRun) {
       if (typeof prompt.prompt === 'function') {
-        const promptResult = await prompt.prompt();
-        console.log(`Debug - Prompt result for ${prompt.name}:`, JSON.stringify(promptResult, null, 2));
-        Object.assign(results, promptResult);
+        Object.assign(results, await prompt.prompt());
       } else {
         console.error(`Warning: ${prompt.name} does not have a valid prompt function`);
       }
     }
-
     for (const service of servicesToRun) {
       const serviceResult = await service.func();
-      console.log(`Debug - Service result for ${service.name}:`, JSON.stringify(serviceResult, null, 2));
       if (service.name === 'weather' || service.name === 'airQuality') {
+        // For weather and air services, flatten the structure
         Object.assign(results, serviceResult);
       } else {
+        // For other services, keep the nested structure
         results[service.name] = serviceResult;
       }
     }
@@ -36,8 +34,7 @@ export async function runPrompts(selection) {
       await runPromptsAndServices(selectedPrompt.prompts, selectedPrompt.services);
     } else if (typeof selectedPrompt.prompt === 'function') {
       // It's an individual prompt
-      const promptResult = await selectedPrompt.prompt();
-      Object.assign(results, promptResult);
+      Object.assign(results, await selectedPrompt.prompt());
     } else {
       throw new Error(`Invalid prompt structure for "${selection}"`);
     }
