@@ -9,4 +9,5 @@ export { weight } from './individual/weight.js';
 export { tasks } from './individual/tasks.js';
 
 export { morning } from './series/morning.js';
+export { evening } from './series/evening.js';
 export { environment } from './series/environment.js';
