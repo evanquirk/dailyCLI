@@ -5,7 +5,7 @@ export const sleep = {
   name: 'sleep',
   prompt: async () => {
     const sleep = await number({
-      message: chalk.yellow('How was your sleep? (1-10):'),
+      message: chalk.yellow('How was your sleep last night? (1-10):'),
       validate: (input) => {
         if (input >= 1 && input <= 10) {
           return true;
